@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DietBot</title>
+    
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot">
+                Hello! I'm DietBot. You can write what you ate or send a photo using the 📸 icon.
+            </div>
+        </div>
+        
+        <div class="chat-input-container">
+            <input type="text" class="chat-input" id="user-input" placeholder="Type what you ate...">
+            <button class="icon-button" id="upload-btn" title="Upload/Take Photo">📸</button>
+            <button class="icon-button" id="profile-btn" title="Profile Information">👤</button>
+            <button class="send-button" id="send-btn">→</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="profile-modal">
+        <div class="modal-content">
+            <h2>Profile Information</h2>
+            <p>Please enter your details to personalize calculations.</p>
+            <form id="profile-form">
+                
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="10" max="100" placeholder="E.g.: 25">
+                
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="" disabled selected>Please select...</option>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                    <option value="not_specified">Prefer not to say</option>
+                </select>
+
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" placeholder="E.g.: 170">
+                
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" placeholder="E.g.: 70">
+                
+                <label for="activity">Activity Level:</label>
+                <select id="activity" name="activity">
+                    <option value="" disabled selected>Please select...</option>
+                    <option value="sedentary">Sedentary (Office job)</option>
+                    <option value="light">Lightly Active (1-2 days/week)</option>
+                    <option value="moderate">Moderately Active (3-5 days/week)</option>
+                    <option value="very_active">Very Active (Heavy training)</option>
+                </select>
+                
+                <button type="button" id="save-profile-btn">Save</button>
+                <button type="button" id="close-modal-btn">Close</button>
+            </form>
+        </div>
+    </div>
+    
+    <input type="file" id="file-input" accept="image/*" style="display: none;">
+
+    <script src="Script.js"></script>
+</body>
+</html>
